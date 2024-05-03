@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo-List</title>
+        <meta charset="URF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="Pic/Todo-icon.png" type="icon">
+        <link rel="stylesheet" href="signup.css">  
+    </head>
+    <body>
+        <div class="signUp">
+            <h1 class="signUp-heading">Sign Up</h1>
+            <form action="#" class="signUp-form" autocomplete="off">
+                <label for="userNameSignUp" class="signUp-label" onclick="onClickUserNameSignUp()">User name</label>
+                <input type="text" name="userNameSignUp" id="userNameSignUp" class="signUp-input" placeholder="Eg: ThanhHai0709" autocomplete="username">
+                <label for="passWordSignUp" class="signUp-label" onclick="onClickPassWordSignUp()">Password</label>
+                <input type="text" name="passWordSignUp" id="passWordSignUp" class="signUp-input" placeholder="Eg: Hai1234@">
+                <label for="gmailSignUp" class="signUp-label" onclick="onClickGmailSignUp()">Gmail</label>
+                <input type="email" name="gmailSignUp" id="gmailSignUp" class="signUp-input" placeholder="Eg: thanhhai@gmail.com" autocomplete="email">
+                <button class="signUp-submit" onclick="onClickSignUpSubmit()">Sign Up</button>
+            </form>
+            <p class="signUp-already">
+                <span>If you already have an account ?</span>
+                <a href="signin.html" class="signUp-signIn-link">Sign in</a>
+            </p>
+        </div>
+        <script src="sign.js"></script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html {
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f1f1f1e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: url(Pic/Artboard\ 3.png) no-repeat;
+}
+
+.signIn {
+    padding: 50px 45px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0 0 50px 5px black;
+}
+
+.signIn-heading {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e3b53;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.signIn-social {
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    border: 0;
+    background: rgb(72, 149, 241);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 10px 5px rgba(72, 149, 241, 0.5);
+}
+
+.signIn-social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4895f1;
+}
+
+.signIn-social-text {
+    display: block;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+
+.signIn-or {
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+    margin: 20px auto;
+    position: relative;
+}
+
+.signIn-or span {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.signIn-or::after {
+    content: "";
+    width: 100%;
+    height: 0.5px;
+    background-color: #999;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.signIn-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.signIn-input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #D7D7D7;
+    outline: none;
+    border: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.signIn-submit {
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border: 0;
+    outline: none;
+    display: inline-block;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgb(72, 241, 109);
+    box-shadow: 0 5px 20px 5px rgba(72, 241, 109, 0.5);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.signIn-already {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    display: block;
+    margin-top: 30px;
+}
+
+.signIn-signUp-link {
+    color: #2979ff;
+    text-decoration: none;
+}

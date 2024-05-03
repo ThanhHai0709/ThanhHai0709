@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+html {
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f1f1f1e2;
+}
+
+.heading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 2px solid black;
+    box-shadow: 0 2px 20px 2px rgb(106, 106, 106);
+}
+
+.headingLeft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headingColumn1, .headingColumn2 span, .headingColumn3, .headingTodoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headingIcon  {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.headingIcon:hover{
+    background-color: #F0F0F0;
+}
+
+i.fa-solid {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    top: 0;
+    transform: translate(0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headingTodoIcon {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.headingTodoIcon span {
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.headingColumn2 span, .headingColumn2 {
+    width: 400px;
+    height: 100%;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+.headingSearchText {
+    border: none;
+    width: 100%;
+    height: 46px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+.headingSearchIcon {
+    background-color: #F0F0F0; 
+}
+
+.headingSearchText::placeholder, .headingSearchText:focus, .headingSearchText  {
+    font-size: 20px;
+    color: black;
+    outline: none;
+}
+
+.headingLayoutIcon {
+    margin-right: 13px;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "slicebar calendar calendar calendar calendar calendar";
+}
+
+.slicebar {
+    position: relative;
+    grid-area: slicebar;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    padding: 110px 20px;
+    padding-bottom: 0;
+    /* display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0; */
+}
+
+.slicebarButtonUser {
+    margin-top: 150px;
+    padding-left: 20px;
+    padding-right: 10px;
+    bottom: 10px;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.slicebarButtonUser span {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+}
+
+i.fa-solid.fa-user {
+    display: grid;
+    place-content: center;
+    font-size: 30px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    background-color: #4895F1;
+    transform: translate(0, 0);
+    border-radius: 50%;
+    border: 3px dashed black;
+}
+
+.slicebarButtonIcon header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+header .icons {
+    display: flex;
+    margin-left: 0px;
+}
+
+header .icons span{
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    user-select: none;
+    border-radius: 50%;
+}
+
+header .icons span:hover{
+    background: #f2f2f2;
+}
+
+.todoButton {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 60px;
+    background-color: #F0F0F0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.todoButton:hover {
+    box-shadow: 0 0 5px 1px #aaaaaa;
+}
+
+i.fa-solid.fa-plus {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.todoButton span {
+    display: block;
+    margin: 0 auto;
+}
+
+.notificationButton {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+
+i.fa-solid.fa-bell {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.notificationButton span {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto;
+    transform: translate(-6%, 0);
+}
+
+.notificationButton:hover {
+    background-color: #F0F0F0;
+    border-radius: 20px;
+}
+
+.labelsButton {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+
+i.fa-solid.fa-tag {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.labelsButton span {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto;
+    transform: translate(-20%, 0);
+}
+
+.labelsButton:hover {
+    background-color: #F0F0F0;
+    border-radius: 20px;
+}
+
+.databaseButton {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+
+i.fa-solid.fa-database {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.databaseButton span {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto;
+    transform: translate(-14%, 0);
+}
+
+.databaseButton:hover {
+    background-color: #F0F0F0;
+    border-radius: 20px;
+}
+
+.binButton {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+
+i.fa-solid.fa-trash {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.binButton span {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto;
+    transform: translate(-13%, 0);
+}
+
+.binButton:hover {
+    background-color: #F0F0F0;
+    border-radius: 20px;
+}
+
+.calendar {
+    grid-area: calendar;
+    width: 100%;
+    margin-top: 14vh;
+    height: 86vh;
+    font-size:20px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.calendarWeeks {
+    display: flex;
+    width: 100%;
+}
+
+.weeks {
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 11px;
+    color: rgb(112, 117, 122);
+    border: 1px solid black;
+    border-bottom: none;
+    border-right: none;
+}
+
+.weeks span {
+    cursor: text;
+}
+
+.calendarDays .calendarRow .calendarColumn .calendarDaysColumn {
+    width: 100%;
+}
+
+.calendarRow {
+    position: relative;
+    width: 100%;
+    height: calc(86vh / 6.2);
+}
+
+.calendarColumn {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.calendarEachColumn {
+    position: relative;
+    flex-wrap: wrap;
+    width: calc(100% / 7);
+    height: 100%;
+    border: 1px solid black;
+    border-top: none;
+    border-right: none;
+}
+
+.calendarDaysColumn {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.calendarEachDay {
+    width: calc(100% / 7);
+    height: 20%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#inactive {
+    color: #aaa;
+}
+
+#active {
+    color: white;
+}
+
+#active::before {
+    background-color: blue;
+}
+
+#active:hover::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    opacity: 0.4;
+}
+
+.calendarEachDay::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: none;
+}
+
+.calendarEachDay:hover::before {
+    background-color: #dbdbdb;
+}
+
+.calendarTodoColumn {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.todoEvent {
+    position: relative;
+    display: block;
+    width: calc(100% / 7);
+    height: 100%;
+    padding-top: 20px;
+}
+
+
+
+.todoEvent span {
+    display: block;
+    z-index: 100;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-bottom: 2px;
+    background-color: green;
+    cursor: pointer;
+}
+
+.todoEvent span:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html {
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+}
+
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f1f1f1e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: url(Pic/Artboard\ 3.png) no-repeat;
+}
+
+.signUp {
+    padding: 50px 45px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0 0 50px 5px black;
+}
+
+.signUp-heading {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e3b53;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.signUp-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.signUp-input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #D7D7D7;
+    outline: none;
+    border: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.signUp-submit {
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border: 0;
+    outline: none;
+    display: inline-block;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgb(72, 241, 109);
+    box-shadow: 0 2px 10px 5px rgba(72, 241, 109, 0.5);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.signUp-already {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    display: block;
+    margin-top: 25px;
+}
+
+.signUp-signIn-link {
+    color: #2979ff;
+    text-decoration: none;
+}

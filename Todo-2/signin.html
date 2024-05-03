@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo-List</title>
+        <meta charset="URF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="Pic/Todo-icon.png" type="icon">
+        <link rel="stylesheet" href="signin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    </head>
+    <body>
+        <div class="signIn">
+            <h1 class="signIn-heading">Sign In</h1>
+            <div class="signIn-social">
+                <img src="https://image.similarpng.com/very-thumbnail/2020/06/Logo-google-icon-PNG.png" alt="G" class="signIn-social-icon">
+                <span class="signIn-social-text">Sign In with Google</span>
+            </div>
+            <div class="signIn-or"><span>Or</span></div>
+            <form action="#" class="signIn-form" autocomplete="off">
+                <label for="userNameSignIn" class="signIn-label" onclick="onClickUserName()">User name</label>
+                <input type="text" name="userNameSignIn" id="userNameSignIn" class="signIn-input" placeholder="Eg: ThanhHai0709">
+                <label for="passWordSignIn" class="signIn-label" onclick="onClickPassWord()">Password</label>
+                <input type="password" name="passWordSignIn" id="passWordSignIn" class="signIn-input" placeholder="Eg: Hai1234@">
+                <button class="signIn-submit" onclick="onClickSignInSubmit()">Sign In</button>
+            </form>
+            <p class="signIn-already">
+                <span>If you don't already have an account ?</span>
+                <a href="signup.html" class="signIn-signUp-link">Sign up</a>
+            </p>
+        </div>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="sign.js"></script>
+    </body>
+</html>
