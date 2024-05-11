@@ -1,155 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-html {
-    font-size: 62.5%;
-    font-family: "Inter", sans-serif;
+function onClickUserName() {
+    document.getElementById("userNameSignIn").focus();
 }
 
-* {
-    margin: 0;
-    box-sizing: border-box;
+function onClickPassWord() {
+    document.getElementById("passWordSignIn").focus();
 }
 
-body {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #f1f1f1e2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background: url(Pic/Artboard\ 3.png) no-repeat;
+function onClickUserNameSignUp() {
+    document.getElementById("userNameSignUp").focus();
 }
 
-.signIn {
-    padding: 50px 45px;
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    max-width: 400px;
-    border-radius: 20px;
-    border: 2px solid black;
-    box-shadow: 0 0 50px 5px black;
+function onClickPassWordSignUp() {
+    document.getElementById("passWordSignUp").focus();
 }
 
-.signIn-heading {
-    font-size: 30px;
-    font-weight: bold;
-    color: #2e3b53;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 25px;
+function onClickGmailSignUp() {
+    document.getElementById("gmailSignUp").focus();
 }
 
-.signIn-social {
-    padding: 10px;
-    border-radius: 10px;
-    display: block;
-    width: 100%;
-    height: 50px;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: "Inter", sans-serif;
-    border: 0;
-    background: rgb(72, 149, 241);
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 10px 5px rgba(72, 149, 241, 0.5);
+var storedData = localStorage.getItem('users_data');
+var userData = Array.isArray(storedData) ? storedData : JSON.parse(storedData || "[]");
+
+function redirectToPageSignIn() {
+    window.location = "http://127.0.0.1:5500/Product/Todo-2/signIn.html";
+    alert("Sign Up Success");
 }
 
-.signIn-social-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4895f1;
+function onClickSignUpSubmit() {
+    var userNameSignUp = document.getElementById("userNameSignUp").value;
+    var passWordSignUp = document.getElementById("passWordSignUp").value;
+    var gmailSignUp = document.getElementById("gmailSignUp").value;
+
+    if(checkSignUpValueEmpty(userNameSignUp, passWordSignUp, gmailSignUp)){
+        alert("You must enter complete information!");
+        return;
+    }
+
+    if (isEmailExist(gmailSignUp)) {
+        alert("This gmail is already in use!");
+        return;
+    }
+
+    addUserData(userNameSignUp, passWordSignUp, gmailSignUp);
+    redirectToPageSignIn();
 }
 
-.signIn-social-text {
-    display: block;
-    margin: 0 auto;
-    font-family: "Inter", sans-serif;
+function checkSignUpValueEmpty(name, password, email) {
+    if(name == '' || password == '' || email == ''){
+        return true;
+    }
 }
 
-.signIn-or {
-    text-align: center;
-    font-size: 12px;
-    color: #000;
-    margin: 20px auto;
-    position: relative;
+function isEmailExist(email) {
+    return userData.hasOwnProperty(email);
 }
 
-.signIn-or span {
-    display: inline-block;
-    padding: 10px 30px;
-    background-color: #fff;
-    position: relative;
-    z-index: 2;
+function addUserData(username, password, email) {
+    var storedData = localStorage.getItem('users_data');
+    var userData = storedData ? JSON.parse(storedData) : {};
+    userData[email] = { username: username, password: password, email: email };
+    localStorage.setItem('users_data', JSON.stringify(Object.values(userData)));
 }
 
-.signIn-or::after {
-    content: "";
-    width: 100%;
-    height: 0.5px;
-    background-color: #999;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+function getAllUserData() {
+    return Object.values(userData);
 }
 
-.signIn-label {
-    font-size: 15px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 12px;
-    display: inline-block;
-    cursor: pointer;
+function removeUserData(email) {
+    var indexToRemove = -1;
+    for (var i = 0; i < userData.length; i++) {
+        if (userData[i].email === email) {
+            indexToRemove = i;
+            break;
+        }
+    }
+    if (indexToRemove !== -1) {
+        userData.splice(indexToRemove, 1); // Xóa người dùng tại vị trí indexToRemove
+        localStorage.setItem('users_data', JSON.stringify(userData));
+        return true;
+    }
+    return false;
 }
 
-.signIn-input {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #D7D7D7;
-    outline: none;
-    border: 0;
-    font-family: "Inter", sans-serif;
-    font-size: 13px;
-    margin-bottom: 20px;
+
+function redirectToPageHome() {
+    window.location.href = "http://127.0.0.1:5500/Product/Todo-2/home.html";
+    alert("Welcome Home!");
 }
 
-.signIn-submit {
-    padding: 15px;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    border: 0;
-    outline: none;
-    display: inline-block;
-    border-radius: 10px;
-    width: 100%;
-    background-color: rgb(72, 241, 109);
-    box-shadow: 0 5px 20px 5px rgba(72, 241, 109, 0.5);
-    cursor: pointer;
-    margin-top: 20px;
-}
+function onClickSignInSubmit() {
+    var userNameSignIn = document.getElementById("userNameSignIn").value;
+    var passWordSignIn = document.getElementById("passWordSignIn").value;
+    var checkUserData = false;
+    userData.forEach(function(user){
+        if(user.username === userNameSignIn && user.password === passWordSignIn){
+            checkUserData = true;
+            return;
+        }
+    });
 
-.signIn-already {
-    text-align: center;
-    font-size: 12px;
-    color: #999;
-    display: block;
-    margin-top: 30px;
-}
-
-.signIn-signUp-link {
-    color: #2979ff;
-    text-decoration: none;
+    if(checkUserData == true){
+        console.log("Welcome home!");
+        redirectToPageHome();
+    } else {
+        alert("Invalid user name or password");
+    }
 }
