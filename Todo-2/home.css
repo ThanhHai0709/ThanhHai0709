@@ -107,6 +107,73 @@ i.fa-solid {
     margin-right: 13px;
 }
 
+.headingSettingIcon {
+    width: 100%;
+    margin: 5px auto;
+    position: relative;
+}
+
+.settingDropDownList {
+    position: absolute;
+    margin-top: 5px;
+    width: 100px;
+    transform: translateX(-60px);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.settingDropDownList::before {
+    content: "";
+    height: 100px;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transform: translateY(-50px);
+}
+
+.headingSettingIcon:hover .settingDropDownList {
+    display: block;
+}
+
+.settingDropDownItem {
+    padding: 10px;
+    background-color: #F0F0F0; 
+    color: black;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.settingDropDownItem:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.settingDropDownItem:last-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.settingDropDownItem:hover {
+    background-color: #c3c3c3; 
+}
+
+.settingDropDownText {
+    font-family: "Inter", sans-serif;
+    width: 100px;
+
+}
+
 .content {
     width: 100%;
     height: 100vh;
@@ -455,12 +522,12 @@ i.fa-solid.fa-trash {
 .calendarEachDay {
     width: calc(100% / 7);
     height: 20%;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 100;
+    z-index: 99;
 }
 
 #inactive {
