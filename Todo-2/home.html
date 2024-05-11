@@ -30,7 +30,23 @@
                 <div class="headingRight">
                     <div class="headingColumn3">
                         <button class="headingLayoutIcon headingIcon"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <button class="headingSettingIcon headingIcon"><i class="fa-solid fa-gear"></i></button>
+                        <button class="headingSettingIcon headingIcon">
+                            <i class="fa-solid fa-gear">
+                            <ul class="settingDropDownList">
+                                <li class="settingDropDownItem">
+                                    <span class="settingDropDownText" onclick="onClickAccount()">Account</span>
+                                </li>
+                                <li class="settingDropDownItem">
+                                    <span class="settingDropDownText" onclick="onClickDarkMode()">Dark Mode</span>
+                                </li>
+                                <li class="settingDropDownItem">
+                                    <span class="settingDropDownText" onclick="onClickLanguage()">Language</span>
+                                </li>
+                                <li class="settingDropDownItem">
+                                    <span class="settingDropDownText" onclick="onClickLogOut()">Log Out</span>
+                                </li>
+                            </ul>
+                        </i></button>
                     </div>
                 </div>
             </div>
@@ -44,7 +60,7 @@
                                 <span id="next" class="material-symbols-rounded">chevron_right</span>
                             </div>
                         </header>
-                        <div class="todoButton">
+                        <div class="todoButton" onclick="onClickAddTodo()">
                             <i class="fa-solid fa-plus"></i>
                             <span>Add Todo</span>
                         </div>
